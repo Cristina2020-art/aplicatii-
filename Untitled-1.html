@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     p {
+      color: blue;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 18px;
+      text-align: center;
+     }
+  </style>
+</head>
+<body>
+  <p></p>
+   <script defer>
+      let p = document.querySelector("p");
+      let text = "ajs dka snd asmn damn asmnd amsn dmnas dnmas dman dman dmans dnmas dasmnd";
+      let length = text.length;
+      let time = 50;
+      let litera = 0;
+
+      typetext();
+      function typetext () {
+           p.innerHTML += text[litera];
+           // changeColor();
+           if (litera == length - 1) {
+               return;
+            } else {
+              litera++;
+           }
+          setTimeout(typetext, time);
+    }
+
+       // schimbam culoarea textului
+       function changeColor () {
+          let r = Math.floor((Math.random() * 255) + 1);
+          let g = Math.floor((Math.random() * 255) + 1);
+          let b = Math.floor((Math.random() * 255) + 1);
+          let color = "rgb("+r+","+g+","+b+")";
+          p.style.backgroundColor = color;
+        }
+   </script>
+</body>
+</html>
